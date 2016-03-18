@@ -11,14 +11,16 @@ FROM warehouse
 JOIN warehouse_product
 ON warehouse.id = warehouse_product.warehouse_id
 JOIN products
-ON warehouse_product.product_id = 5;
+ON warehouse_product.product_id = products.id
+WHERE products.description = 'cheetos';
 
 —- Q4) SELECT DISTINCT warehouse
 FROM warehouse
 JOIN warehouse_product
 ON warehouse.id = warehouse_product.warehouse_id
 JOIN products
-ON warehouse_product.product_id = 6;
+ON warehouse_product.product_id = products.id
+WHERE description = 'diet pepsi';
 
 —- Q5) SELECT customers.last_name, customers.first_name, count(customers.id)
 FROM customers
